@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://wq2xanw14b47"]
+
+[ext_resource type="Script" path="res://Scripts/Debug/Controller/DebugControllerTrigger.cs" id="1_g6qut"]
+[ext_resource type="Texture2D" uid="uid://bjgjc064gmgh7" path="res://Resources/Textures/DebugController/xbox_lt_outline.svg" id="1_vsd2s"]
+[ext_resource type="Texture2D" uid="uid://b5alf65gj8qnb" path="res://Resources/Textures/DebugController/xbox_lt_triggered.svg" id="3_0qgpb"]
+
+[node name="Trigger" type="TextureRect" node_paths=PackedStringArray("mask", "fill")]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_vsd2s")
+expand_mode = 1
+script = ExtResource("1_g6qut")
+mask = NodePath("Mask")
+fill = NodePath("Mask/Fill")
+
+[node name="Mask" type="Control" parent="."]
+show_behind_parent = true
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = -5.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fill" type="TextureRect" parent="Mask"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.025
+anchor_right = 0.975
+anchor_bottom = 0.975
+offset_left = -4.75
+offset_top = -5.7
+offset_right = 4.75
+offset_bottom = 5.7
+texture = ExtResource("3_0qgpb")
+expand_mode = 1

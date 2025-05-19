@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://1buq3b1gsnr"]
+
+[ext_resource type="Script" path="res://Scripts/Core/Player/PlayerCharacter.cs" id="1_uap1j"]
+[ext_resource type="Script" path="res://Scripts/Core/Player/PlayerController.cs" id="2_ti8v3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2vwb6"]
+
+[node name="Player" type="RigidBody3D" node_paths=PackedStringArray("camera")]
+input_ray_pickable = false
+mass = 60.0
+gravity_scale = 0.0
+script = ExtResource("1_uap1j")
+camera = NodePath("Camera")
+linearForce = 5.0
+angularFriction = 0.95
+brakePower = 0.975
+
+[node name="Controller" type="Node" parent="."]
+script = ExtResource("2_ti8v3")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+current = true
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_2vwb6")

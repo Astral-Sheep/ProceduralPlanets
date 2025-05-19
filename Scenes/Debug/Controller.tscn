@@ -1,0 +1,207 @@
+[gd_scene load_steps=22 format=3 uid="uid://chel0gxedelbf"]
+
+[ext_resource type="Script" path="res://Scripts/Debug/Controller/DebugController.cs" id="1_777km"]
+[ext_resource type="Texture2D" uid="uid://djdqevnbla8nh" path="res://Resources/Textures/DebugController/controller_xboxone.svg" id="1_fedea"]
+[ext_resource type="PackedScene" uid="uid://cykm5y7hmo8oe" path="res://Scenes/Debug/ControllerButton.tscn" id="1_rf0ar"]
+[ext_resource type="Texture2D" uid="uid://renm1s5mlod3" path="res://Resources/Textures/DebugController/controller_xboxone_filled.svg" id="2_y3vv6"]
+[ext_resource type="Texture2D" uid="uid://dtk3lfvi4i4ec" path="res://Resources/Textures/DebugController/xbox_button_color_b_outline.svg" id="3_suw5f"]
+[ext_resource type="Texture2D" uid="uid://cpjrl0osqd7l2" path="res://Resources/Textures/DebugController/xbox_button_color_b.svg" id="4_1r7oy"]
+[ext_resource type="Texture2D" uid="uid://cwb2xhwuvn774" path="res://Resources/Textures/DebugController/xbox_button_color_x_outline.svg" id="5_o7a0l"]
+[ext_resource type="Texture2D" uid="uid://b244gghfbpk0g" path="res://Resources/Textures/DebugController/xbox_button_color_x.svg" id="6_p1ro0"]
+[ext_resource type="Texture2D" uid="uid://py6msah7cnfb" path="res://Resources/Textures/DebugController/xbox_button_color_y_outline.svg" id="7_iuglr"]
+[ext_resource type="Texture2D" uid="uid://duhlbin5cfnp" path="res://Resources/Textures/DebugController/xbox_button_color_y.svg" id="8_sd0is"]
+[ext_resource type="PackedScene" uid="uid://ndr3ds130mwi" path="res://Scenes/Debug/ControllerJoystick.tscn" id="11_6375q"]
+[ext_resource type="Texture2D" uid="uid://cr7gbok2tkq0s" path="res://Resources/Textures/DebugController/xbox_lb_v2.svg" id="11_f5no3"]
+[ext_resource type="Texture2D" uid="uid://cq24sbbgm08oc" path="res://Resources/Textures/DebugController/xbox_stick_top_l_btn_outline.svg" id="12_4a2gi"]
+[ext_resource type="Texture2D" uid="uid://dhkkkdeyivtjf" path="res://Resources/Textures/DebugController/xbox_stick_top_r_btn.svg" id="12_6h1ob"]
+[ext_resource type="Texture2D" uid="uid://cc1iq7iq27asn" path="res://Resources/Textures/DebugController/xbox_lb_v2_triggered.svg" id="12_pgqb5"]
+[ext_resource type="Texture2D" uid="uid://c36j6afu11w0i" path="res://Resources/Textures/DebugController/xbox_stick_top_r_btn_outline.svg" id="13_hncmi"]
+[ext_resource type="Texture2D" uid="uid://bin1w57eevwho" path="res://Resources/Textures/DebugController/xbox_rb_v2.svg" id="13_kh502"]
+[ext_resource type="Texture2D" uid="uid://cdd1rexptshwg" path="res://Resources/Textures/DebugController/xbox_rb_v2_triggered.svg" id="14_ury6q"]
+[ext_resource type="PackedScene" uid="uid://wq2xanw14b47" path="res://Scenes/Debug/ControllerTrigger.tscn" id="19_o2vnm"]
+[ext_resource type="Texture2D" uid="uid://diprdsxvg1gkd" path="res://Resources/Textures/DebugController/xbox_rt_outline.svg" id="20_6pen2"]
+[ext_resource type="Texture2D" uid="uid://ckfur4yee3ltj" path="res://Resources/Textures/DebugController/xbox_rt_triggered.svg" id="21_hief3"]
+
+[node name="DebugController" type="TextureRect" node_paths=PackedStringArray("buttonDown", "buttonRight", "buttonLeft", "buttonUp", "buttonLeftStick", "buttonRightStick", "buttonLeftShoulder", "buttonRightShoulder", "leftStick", "rightStick", "leftTrigger", "rightTrigger")]
+offset_right = 256.0
+offset_bottom = 256.0
+pivot_offset = Vector2(128, 128)
+texture = ExtResource("1_fedea")
+expand_mode = 1
+script = ExtResource("1_777km")
+buttonDown = NodePath("ButtonDown")
+buttonRight = NodePath("ButtonRight")
+buttonLeft = NodePath("ButtonLeft")
+buttonUp = NodePath("ButtonUp")
+buttonLeftStick = NodePath("LeftStick/Button")
+buttonRightStick = NodePath("RightStick/Button")
+buttonLeftShoulder = NodePath("ButtonLeftShoulder")
+buttonRightShoulder = NodePath("ButtonRightShoulder")
+leftStick = NodePath("LeftStick")
+rightStick = NodePath("RightStick")
+leftTrigger = NodePath("LeftTrigger")
+rightTrigger = NodePath("RightTrigger")
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 0, 0.498039)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_y3vv6")
+expand_mode = 1
+
+[node name="ButtonDown" parent="." instance=ExtResource("1_rf0ar")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.437
+anchor_right = 0.719
+anchor_bottom = 0.531
+offset_top = 0.127998
+offset_right = -0.0640106
+offset_bottom = 0.0639954
+
+[node name="ButtonRight" parent="." instance=ExtResource("1_rf0ar")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.687
+anchor_top = 0.375
+anchor_right = 0.781
+anchor_bottom = 0.469
+offset_left = 0.127991
+offset_right = 0.0639954
+offset_bottom = -0.064003
+texture = ExtResource("3_suw5f")
+pressedTexture = ExtResource("4_1r7oy")
+releasedTexture = ExtResource("3_suw5f")
+
+[node name="ButtonLeft" parent="." instance=ExtResource("1_rf0ar")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.562
+anchor_top = 0.375
+anchor_right = 0.656
+anchor_bottom = 0.469
+offset_left = 0.127991
+offset_right = 0.0639954
+offset_bottom = -0.064003
+texture = ExtResource("5_o7a0l")
+pressedTexture = ExtResource("6_p1ro0")
+releasedTexture = ExtResource("5_o7a0l")
+
+[node name="ButtonUp" parent="." instance=ExtResource("1_rf0ar")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.312
+anchor_right = 0.719
+anchor_bottom = 0.406
+offset_top = 0.127998
+offset_right = -0.0640106
+offset_bottom = 0.0639954
+texture = ExtResource("7_iuglr")
+pressedTexture = ExtResource("8_sd0is")
+releasedTexture = ExtResource("7_iuglr")
+
+[node name="ButtonLeftShoulder" parent="." instance=ExtResource("1_rf0ar")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.235
+anchor_top = 0.233
+anchor_right = 0.403
+anchor_bottom = 0.296
+offset_left = 0.0899963
+offset_top = 0.101997
+offset_right = 0.0819931
+offset_bottom = -0.026001
+texture = ExtResource("11_f5no3")
+pressedTexture = ExtResource("12_pgqb5")
+releasedTexture = ExtResource("11_f5no3")
+
+[node name="ButtonRightShoulder" parent="." instance=ExtResource("1_rf0ar")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.594
+anchor_top = 0.234
+anchor_right = 0.762
+anchor_bottom = 0.297
+offset_left = -0.0640106
+offset_top = 0.0959969
+offset_right = -0.0720062
+offset_bottom = -0.0320053
+texture = ExtResource("13_kh502")
+pressedTexture = ExtResource("14_ury6q")
+releasedTexture = ExtResource("13_kh502")
+
+[node name="LeftStick" parent="." instance=ExtResource("11_6375q")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.242
+anchor_top = 0.32
+anchor_right = 0.398
+anchor_bottom = 0.477
+offset_left = 0.0479965
+offset_top = 0.0799942
+offset_right = 0.111992
+offset_bottom = -0.112007
+
+[node name="Button" parent="LeftStick" index="0"]
+texture = ExtResource("12_4a2gi")
+releasedTexture = ExtResource("12_4a2gi")
+
+[node name="RightStick" parent="." instance=ExtResource("11_6375q")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.496
+anchor_top = 0.465
+anchor_right = 0.629
+anchor_bottom = 0.598
+offset_left = 0.0239944
+offset_top = -0.0400085
+offset_right = -0.0240021
+offset_bottom = -0.0880127
+maxDistance = 17.0
+
+[node name="Button" parent="RightStick" index="0"]
+texture = ExtResource("13_hncmi")
+pressedTexture = ExtResource("12_6h1ob")
+releasedTexture = ExtResource("13_hncmi")
+
+[node name="LeftTrigger" parent="." instance=ExtResource("19_o2vnm")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.07
+anchor_right = 0.414
+anchor_bottom = 0.246
+offset_left = 0.0719986
+offset_top = 0.0799999
+offset_right = 0.0159912
+offset_bottom = 0.0239983
+metadata/_edit_group_ = true
+
+[node name="RightTrigger" parent="." instance=ExtResource("19_o2vnm")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.582
+anchor_top = 0.07
+anchor_right = 0.758
+anchor_bottom = 0.246
+offset_left = 0.00799561
+offset_top = 0.0799999
+offset_right = -0.0480042
+offset_bottom = 0.0239983
+texture = ExtResource("20_6pen2")
+metadata/_edit_group_ = true
+
+[node name="Fill" parent="RightTrigger/Mask" index="0"]
+texture = ExtResource("21_hief3")
+
+[editable path="LeftStick"]
+[editable path="RightStick"]
+[editable path="LeftTrigger"]
+[editable path="RightTrigger"]

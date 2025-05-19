@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="xbox_stick_top_l_btn.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="11.765625"
+     inkscape:cx="31.957503"
+     inkscape:cy="32"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g6" />
+  <defs
+     id="defs2" />
+  <g
+     id="g6">
+    <g
+       id="g1464">
+      <path
+         stroke="none"
+         fill="#ffffff"
+         d="M 20.7,20.7 C 23.8,17.566667 27.566667,16 32,16 c 4.433333,0 8.183333,1.55 11.25,4.65 l 0.4,0.35 c 2.9,3.066667 4.35,6.733333 4.35,11 0,4.433333 -1.55,8.183333 -4.65,11.25 l -0.1,0.1 C 40.183333,46.45 36.433333,48 32,48 27.733333,48 24.066667,46.55 21,43.65 l -0.35,-0.4 C 17.55,40.183333 16,36.433333 16,32 16,27.566667 17.566667,23.8 20.7,20.7 H 20.65 L 20.7,20.65 V 20.7 M 27,24 V 40 H 39 V 36 H 31 V 24 h -4"
+         id="path4"
+         sodipodi:nodetypes="csccsccsccsccccccccccc" />
+    </g>
+  </g>
+</svg>

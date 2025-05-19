@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlanetData" load_steps=3 format=3 uid="uid://h7q2tpf2tupq"]
+
+[ext_resource type="Script" path="res://Scripts/Core/World/PlanetData.cs" id="1_008vi"]
+[ext_resource type="NoiseTexture3D" uid="uid://dtb5vn5viqek2" path="res://Resources/Textures/new_noise_texture_3d.tres" id="1_c8xl4"]
+
+[resource]
+script = ExtResource("1_008vi")
+Size = 1500.0
+Roughness = 0.05
+noiseTexture = ExtResource("1_c8xl4")
+Density = 1e-06
+Precision = 5

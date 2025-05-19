@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="64"
+   height="64"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="xbox_stick_top_l_btn_outline.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="16.639106"
+     inkscape:cx="29.0881"
+     inkscape:cy="35.608883"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1464" />
+  <defs
+     id="defs2" />
+  <g
+     id="g6">
+    <g
+       id="g1464">
+      <path
+         id="path4"
+         d="M 32 16 C 27.566667 16 23.799219 17.565886 20.699219 20.699219 C 17.565886 23.799219 16 27.566667 16 32 C 16 36.433333 17.550391 40.183333 20.650391 43.25 L 21 43.650391 C 24.066667 46.550391 27.733333 48 32 48 C 36.433333 48 40.183333 46.449609 43.25 43.349609 L 43.349609 43.25 C 46.449609 40.183333 48 36.433333 48 32 C 48 27.733333 46.550391 24.066667 43.650391 21 L 43.25 20.650391 C 40.183333 17.550391 36.433333 16 32 16 z M 20.699219 20.699219 L 20.699219 20.650391 L 20.650391 20.699219 L 20.699219 20.699219 z M 32 19 C 35.602083 19 38.648958 20.258594 41.140625 22.777344 L 41.464844 23.0625 C 43.821094 25.554167 45 28.533333 45 32 C 45 35.602083 43.741406 38.648958 41.222656 41.140625 L 41.140625 41.222656 C 38.648958 43.741406 35.602083 45 32 45 C 28.533333 45 25.554167 43.821094 23.0625 41.464844 L 22.777344 41.140625 C 20.258594 38.648958 19 35.602083 19 32 C 19 28.397917 20.272526 25.337109 22.818359 22.818359 L 22.777344 22.818359 L 22.818359 22.777344 L 22.818359 22.818359 C 25.337109 20.272526 28.397917 19 32 19 z "
+         style="fill:#ffffff;fill-opacity:1" />
+      <path
+         d="M 27,24 V 40 H 39 V 36 H 31 V 24 h -4"
+         style="fill:#ffffff;stroke:none"
+         id="path848" />
+    </g>
+  </g>
+</svg>

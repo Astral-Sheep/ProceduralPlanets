@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cykm5y7hmo8oe"]
+
+[ext_resource type="Script" path="res://Scripts/Debug/Controller/DebugControllerButton.cs" id="1_yb2e1"]
+[ext_resource type="Texture2D" uid="uid://cmk57b7te1qui" path="res://Resources/Textures/DebugController/xbox_button_color_a_outline.svg" id="1_ycm5m"]
+[ext_resource type="Texture2D" uid="uid://dhfyf33hbtb1g" path="res://Resources/Textures/DebugController/xbox_button_color_a.svg" id="3_l855e"]
+
+[node name="DebugControllerButton" type="TextureRect"]
+offset_right = 22.0
+offset_bottom = 22.0
+texture = ExtResource("1_ycm5m")
+expand_mode = 1
+script = ExtResource("1_yb2e1")
+pressedTexture = ExtResource("3_l855e")
+releasedTexture = ExtResource("1_ycm5m")
