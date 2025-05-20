@@ -1,31 +1,15 @@
-[gd_scene load_steps=18 format=3 uid="uid://ntoj7l6y6hv5"]
+[gd_scene load_steps=20 format=3 uid="uid://ntoj7l6y6hv5"]
 
-[ext_resource type="Texture2D" uid="uid://wts1mcow7rar" path="res://Resources/Textures/Skybox/panorama_image.png" id="1_jj1rg"]
+[ext_resource type="Environment" uid="uid://dcyfg77rl4bba" path="res://Resources/WorldEnvironment.tres" id="1_qdf4b"]
 [ext_resource type="PackedScene" uid="uid://1buq3b1gsnr" path="res://Scenes/Player.tscn" id="2_g42fq"]
 [ext_resource type="Shader" path="res://Resources/Shaders/Grid.gdshader" id="2_wpj23"]
 [ext_resource type="PackedScene" uid="uid://chel0gxedelbf" path="res://Scenes/Debug/Controller.tscn" id="3_8rsfs"]
 [ext_resource type="Resource" uid="uid://h7q2tpf2tupq" path="res://Resources/DefaultPlanet.tres" id="5_hvbj6"]
 [ext_resource type="Script" path="res://Scripts/Core/World/ProceduralPlanet.cs" id="5_ob2qy"]
+[ext_resource type="PackedScene" uid="uid://0bde5tatk776" path="res://Scenes/Portal.tscn" id="6_y6ccx"]
+[ext_resource type="PackedScene" uid="uid://ep2lho7hrl8v" path="res://Scenes/PortalBorder.tscn" id="7_va84x"]
 [ext_resource type="Script" path="res://Scripts/Debug/Profiler.cs" id="7_x1hwy"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_anpee"]
-panorama = ExtResource("1_jj1rg")
-
-[sub_resource type="Sky" id="Sky_rw5gu"]
-sky_material = SubResource("PanoramaSkyMaterial_anpee")
-
-[sub_resource type="Environment" id="Environment_lefsg"]
-background_mode = 2
-sky = SubResource("Sky_rw5gu")
-ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 0.05
-ssr_enabled = true
-ssao_enabled = true
-ssil_enabled = true
-glow_enabled = true
-glow_intensity = 0.1
-glow_bloom = 1.0
+[ext_resource type="Material" uid="uid://2uy3y8124b08" path="res://Resources/Materials/RedMaterial.tres" id="10_38n5g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qvwwq"]
 size = Vector3(25, 1, 25)
@@ -69,10 +53,20 @@ albedo_color = Color(0.47788, 0.47788, 0.47788, 1)
 albedo_color = Color(0.529412, 1, 0.317647, 1)
 distance_fade_max_distance = 4096.0
 
+[sub_resource type="BoxMesh" id="BoxMesh_pyebi"]
+resource_local_to_scene = true
+material = ExtResource("10_38n5g")
+size = Vector3(0.25, 5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p0vpo"]
+resource_local_to_scene = true
+material = ExtResource("10_38n5g")
+size = Vector3(3.5, 0.25, 0.5)
+
 [node name="Main" type="Node"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_lefsg")
+environment = ExtResource("1_qdf4b")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.965926, -0.218286, 0.139063, 0, 0.5373, 0.843391, -0.258819, -0.814654, 0.518992, 0, 0, 0)
@@ -147,3 +141,26 @@ grow_horizontal = 0
 text = "FPS: 120
 ms: 0.008"
 script = ExtResource("7_x1hwy")
+
+[node name="Portal" parent="." node_paths=PackedStringArray("otherSide") instance=ExtResource("6_y6ccx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -9)
+otherSide = NodePath("../Portal2")
+
+[node name="Border" parent="Portal" instance=ExtResource("7_va84x")]
+
+[node name="Portal2" parent="." node_paths=PackedStringArray("otherSide") instance=ExtResource("6_y6ccx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.687, 2.5, -9)
+otherSide = NodePath("../Portal")
+
+[node name="Border" parent="Portal2" instance=ExtResource("7_va84x")]
+
+[node name="Mesh" parent="Portal2/Border/Right" index="1"]
+mesh = SubResource("BoxMesh_pyebi")
+
+[node name="Mesh" parent="Portal2/Border/Left" index="1"]
+mesh = SubResource("BoxMesh_pyebi")
+
+[node name="Mesh" parent="Portal2/Border/Top" index="1"]
+mesh = SubResource("BoxMesh_p0vpo")
+
+[editable path="Portal2/Border"]

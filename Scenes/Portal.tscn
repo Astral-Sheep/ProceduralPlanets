@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://0bde5tatk776"]
+
+[ext_resource type="Script" path="res://Scripts/Core/World/Portals/Portal.cs" id="2_m6xq1"]
+[ext_resource type="Shader" path="res://Resources/Shaders/PortalRenderer.gdshader" id="3_quwaj"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_v6vn3"]
+resource_local_to_scene = true
+size = Vector3(3, 5, 0.05)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6qub3"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cb50v"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("3_quwaj")
+shader_parameter/screen_tex = SubResource("ViewportTexture_6qub3")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rmggi"]
+resource_local_to_scene = true
+size = Vector3(3, 5, 2)
+
+[node name="Portal" type="Area3D" node_paths=PackedStringArray("subviewport", "renderCamera", "renderTarget", "collider")]
+input_ray_pickable = false
+script = ExtResource("2_m6xq1")
+subviewport = NodePath("SubViewport")
+renderCamera = NodePath("SubViewport/RenderCamera")
+renderTarget = NodePath("RenderTarget")
+collider = NodePath("Collider")
+Size = Vector2(3, 5)
+metadata/_edit_group_ = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+msaa_3d = 2
+screen_space_aa = 1
+use_taa = true
+use_debanding = true
+gui_disable_input = true
+size = Vector2i(1920, 1080)
+render_target_update_mode = 3
+
+[node name="RenderCamera" type="Camera3D" parent="SubViewport"]
+cull_mask = 524287
+
+[node name="RenderTarget" type="MeshInstance3D" parent="."]
+layers = 524288
+cast_shadow = 0
+mesh = SubResource("BoxMesh_v6vn3")
+surface_material_override/0 = SubResource("ShaderMaterial_cb50v")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_rmggi")

@@ -32,19 +32,19 @@ public partial class GravitationManager : Node
 	{
 		base._PhysicsProcess(delta);
 
-		if (bodies.Count < 2)
-			return;
-
-		for (int i = 0; i < bodies.Count; i++)
-		{
-			for (int j = 0; j < bodies.Count; j++)
-			{
-				if (i == j)
-					continue;
-
-				bodies[i].velocity += gravityConstant * (bodies[j].Mass / Mathf.Pow((bodies[j].GlobalPosition - bodies[i].GlobalPosition).LengthSquared(), 1.5f)) * (bodies[j].GlobalPosition - bodies[i].GlobalPosition);
-			}
-		}
+		// if (bodies.Count < 2)
+		// 	return;
+		//
+		// for (int i = 0; i < bodies.Count; i++)
+		// {
+		// 	for (int j = 0; j < bodies.Count; j++)
+		// 	{
+		// 		if (i == j)
+		// 			continue;
+		//
+		// 		bodies[i].velocity += gravityConstant * (bodies[j].Mass / Mathf.Pow((bodies[j].GlobalPosition - bodies[i].GlobalPosition).LengthSquared(), 1.5f)) * (bodies[j].GlobalPosition - bodies[i].GlobalPosition);
+		// 	}
+		// }
 	}
 
 	protected override void Dispose(bool pDisposing)

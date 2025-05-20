@@ -62,4 +62,26 @@ public static class MathUtility
 			Mathf.Sin(pHorizontalAngle) * Mathf.Cos(pVerticalAngle)
 		) * pLength;
 	}
+
+	public static Transform3D NoScale(this Transform3D pTransform)
+	{
+		Basis lBasis = pTransform.Basis.Scaled(pTransform.Basis.Scale.Inverse());
+		pTransform.Basis = lBasis;
+		return pTransform;
+	}
+
+	public static Vector3 GetForward(this Transform3D pTransform)
+	{
+		return -pTransform.Basis.Z;
+	}
+
+	public static Vector3 GetRight(this Transform3D pTransform)
+	{
+		return pTransform.Basis.X;
+	}
+
+	public static Vector3 GetUp(this Transform3D pTransform)
+	{
+		return pTransform.Basis.Y;
+	}
 }
